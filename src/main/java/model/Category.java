@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table(name = "categories")
@@ -14,4 +15,7 @@ public class Category {
     private int id;
     @NotBlank
     private String categoryName;
+    private String handledCategoryName;
+    @OneToMany
+    private List<Product> products;
 }
